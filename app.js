@@ -6,6 +6,7 @@ import logger from "morgan";
 
 import indexRouter from "./routes/index.js";
 import bookmarksRouter from "./routes/bookmarks.js";
+import CartItemsRouter from "./routes/cartitem.js";
 
 const app = express();
 const __dirname = path.resolve(path.dirname(""));
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/bookmarks", bookmarksRouter);
+app.use("/CartItems", CartItemsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
